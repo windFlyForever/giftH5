@@ -1,0 +1,94 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name=”viewport” content=”width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no”/>
+	<title>一生有你</title>
+
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<style type="text/css">
+	@font-face {
+		font-family: digit;
+		src: url('digital-7_mono.ttf') format("truetype");
+	}
+
+	</style>
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<!--<video src="./music/2.mp3" loop="loop" autoplay="autoplay"></video>-->
+	<audio id="bgm" autoplay="autoplay" controls="controls" loop="loop">
+		<source src="music/2.mp3">
+	</audio>
+
+
+
+	<div id="content">
+		<!--<div id="code">
+		
+			<span class="space"/><span class="keyword">万圣节</span><br />					
+			<span class="comments">黑夜带着喧闹来临</span> <br />
+			<span class="comments">迟暮的残阳抵不过路途遥远</span> <br />
+			<span class="comments">现在灯光才是永恒的光明 </span><br />			
+			<span class="comments">清风徐徐撩拨着万圣节的前夕</span><br />		
+			<span class="comments">空洞的面具下藏着陌生的眼睛</span><br />
+			<br />
+			<span class="comments">不知沉浸在喜悦中的是寂寞还是空虚</span><br />
+			<span class="comments">亲吻大地祈求带走愁绪</span><br />
+			<span class="comments">星辰暗淡卑微又能飞到哪里</span><br />
+			<span class="comments">也许生活本就应当沉沦在轻浮迷离</span><br />
+			<span class="comments">好过在孤独中凝望朦胧的月景</span><br />		
+			<br />
+			
+			<span class="comments">Happy Halloweens！</span><br />		
+		</div>-->
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					<div class="font">执子之手</div>
+					<div class="font">与子偕老</div>
+					<div class="font">一生有你</div>
+					<div class="font">永世无悔</div>
+					<!--<div class="signature">	</div>-->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+</script>
+
+</body>
+</html>
